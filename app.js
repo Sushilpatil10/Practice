@@ -4,7 +4,7 @@ const path =require("path")
 const methodOverride =require("method-override")
 require('dotenv').config()
 const {connectDb} =require('./Database')
-const PORT =3000
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -60,7 +60,7 @@ app.post("/register",async(req,res)=>{
     try{
          const {name ,email,phone_no,birth_date,password} =req.body
 
-         const hashed = await bcrypt.hash(password, 10);
+       
 
             const newuser = new User({
             name,
