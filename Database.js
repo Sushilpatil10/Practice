@@ -4,8 +4,8 @@ require('dotenv').config()
 
    const connectDb =async()=>{
      try{
-        //  await mongoose.connect('mongodb://localhost:27017/onemorepush')
-           mongoose.connect(process.env.Mongo_url)
+        //  await mongoose.connect('mongodb://lolcalhost:27017/onemorepush')
+           mongoose.connect(process.env.MONGO_URL)
          console.log("database has been connected")
         }
         catch(err){
